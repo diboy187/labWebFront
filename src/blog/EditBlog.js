@@ -3,12 +3,12 @@ import { useState, useEffect } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 
 
-const URI = 'http://23.21.20.142:8081/blogs/'
+const URI = 'http://18.232.147.37:8081/blogs/'
 
 
 const CompEditBlog = () => {
 
-    const [tittle, setTittle] = useState('')
+    const [title, setTitle] = useState('')
     const [content, setContent] = useState('')
     const navigate = useNavigate()
     const {id} = useParams()
@@ -20,7 +20,7 @@ const CompEditBlog = () => {
         e.preventDefault()
         await axios.put(URI + id, {
 
-            tittle: tittle,
+            title: title,
             content: content
         })
         navigate('/')
@@ -33,7 +33,7 @@ const CompEditBlog = () => {
 
     const getBlogById = async ()=>{
        const res =  await axios.get(URI+id)
-        setTittle(res.data.tittle)
+        setTitle(res.data.title)
         setContent(res.data.content)
 
     }
@@ -46,8 +46,8 @@ const CompEditBlog = () => {
             <div className='mb-3'>
                 <label className='form-label'>Titulo</label>
                 <input
-                    value={tittle}
-                    onChange={(e) => setTittle(e.target.value)}
+                    value={title}
+                    onChange={(e) => setTitle(e.target.value)}
                     type='text'
                     className='form-control'
                 />

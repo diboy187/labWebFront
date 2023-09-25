@@ -3,7 +3,7 @@ import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 
-const URI = 'http://23.21.20.142:8081/blogs/'
+const URI = 'http://18.232.147.37:8081/blogs/'
 
 
 const CompCreateBlog = () => {
@@ -15,7 +15,7 @@ const CompCreateBlog = () => {
     //procedimiento para crear
     const store = async (e) => {
         e.preventDefault()
-        await axios.post(URI, { title: title, content, content })
+        await axios.post(URI, { title: title, content: content })
         navigate('/')
     }
 

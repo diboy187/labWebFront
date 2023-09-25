@@ -2,7 +2,7 @@ import axios from 'axios'
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 
-const URI = 'http://23.21.20.142:8081/blogs/'
+const URI = 'http://18.232.147.37:8081/blogs/'
 
 const CompShowBlogs = () => {
     const [blogs, setBlog] = useState([])
